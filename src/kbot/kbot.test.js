@@ -41,3 +41,24 @@ describe("Saludar por nombre", () => {
 
     
   });
+
+  describe("Saludar tomando en cuenta la hora", () => {
+    it("deberia Saludar a Andrés en la mañana ", () => {
+        let kbot = new Kbot();
+        let resultado = kbot.saludar("Andrés", 7) 
+        expect(resultado).toEqual("Buenos días Andrés");
+    });
+
+    it("deberia Saludar a Andrés en la tarde", () => {
+        let kbot = new Kbot();
+        let resultado = kbot.saludar("Andrés", 15) 
+        expect(resultado).toEqual("Buenas tardes Andrés");
+    });
+
+    it("deberia Saludar a Andrés en la noche", () => {
+        let kbot = new Kbot();
+        let resultado = kbot.saludar("Andrés", 21) 
+        expect(resultado).toEqual("Buenas noches Andrés");
+    });
+
+  });
